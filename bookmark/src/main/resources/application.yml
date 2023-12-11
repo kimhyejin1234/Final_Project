@@ -17,8 +17,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: hyejink355@gmail.com
-    password: vntshddcrfoaoven
+    username: 
+    password: 
     properties:
       mail:
         smtp:
@@ -33,7 +33,7 @@ spring:
 
 
 jwt:
-  secret: h6WQ7knqmh5p2QYJCnV4kmwh5g+CS1JxU37cmRvsBmjj4w1qc20RtTLZaE+BttHBpx6W4ANYUVkG2ZFc0RfgGg==
+  secret: 
 
 logging.level:
   org.hibernate.SQL: debug
