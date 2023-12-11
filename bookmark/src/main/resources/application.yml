@@ -7,11 +7,35 @@ spring:
     username: root
     password: mysql
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: update
     database: mysql
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: hyejink355@gmail.com
+    password: vntshddcrfoaoven
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connection-timeout: 5000
+          timeout: 5000
+          write-timeout: 5000
+      auth-code-expiration-millis: 1800000  # 30 * 60 * 1000 == 30분
+
+
+jwt:
+  secret: h6WQ7knqmh5p2QYJCnV4kmwh5g+CS1JxU37cmRvsBmjj4w1qc20RtTLZaE+BttHBpx6W4ANYUVkG2ZFc0RfgGg==
+
 logging.level:
   org.hibernate.SQL: debug
+
+

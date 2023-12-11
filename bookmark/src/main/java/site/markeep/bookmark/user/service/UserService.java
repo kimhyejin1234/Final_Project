@@ -10,6 +10,8 @@ import site.markeep.bookmark.user.dto.response.LoginResponseDTO;
 import site.markeep.bookmark.user.entity.User;
 import site.markeep.bookmark.user.repository.UserRepository;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -24,7 +26,7 @@ public class UserService {
         
         // 1. dto에서 이메일 값을 뽑아서 가입여부 확인
         User user = userRepository
-                .findbyEmail(dto.getEmail())
+                .findByEmail(dto.getEmail())
                 .orElseThrow(
                         () -> new RuntimeException("가입된 회원이 아닙니다! 회원 가입을 진행해주세요.")
                 );
@@ -47,6 +49,11 @@ public class UserService {
                 .build();
 
 
+    }
+
+
+    public boolean isDuplicate(String email) {
+        return  userRepository.findByEmail(email).isEmpty();
     }
 }
 
